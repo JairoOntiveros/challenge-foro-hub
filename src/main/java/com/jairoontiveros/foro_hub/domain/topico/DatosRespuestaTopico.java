@@ -1,7 +1,7 @@
 package com.jairoontiveros.foro_hub.domain.topico;
 
 import java.time.LocalDateTime;
-
+//DTO
 public record DatosRespuestaTopico(
         Long id,
         String titulo,
@@ -24,4 +24,7 @@ public record DatosRespuestaTopico(
                 nuevoTopico.getCurso().getNombre(),
                 nuevoTopico.getFechaDeCreacion());
     }
+
+
+
 }

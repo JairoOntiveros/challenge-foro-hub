@@ -23,7 +23,7 @@ public class ServicioRegistroDeTopicos {
     @Transactional
     public DatosRespuestaTopico registrarTopico(DatosRegistroTopico datos) {
 
-        if(topicoRepository.existsByTituloAndMensaje(datos.titulo(),datos.texto())){
+        if(topicoRepository.existsByTituloAndMensajeIgnoreCase(datos.titulo(),datos.mensaje())){
             throw new ErrorDeValidacion("Ya existe un topico con el mismo titulo y texto");
         }
 

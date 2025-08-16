@@ -5,16 +5,14 @@ import com.jairoontiveros.foro_hub.domain.respuesta.Respuesta;
 import com.jairoontiveros.foro_hub.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -57,9 +55,15 @@ public class Topico {
     public Topico(@Valid DatosRegistroTopico datos, Usuario autor, Curso curso) {
         this.id = null;
         this.titulo = datos.titulo();
-        this.mensaje = datos.texto();
+        this.mensaje = datos.mensaje();
         this.status = StatusTopico.ABIERTO;
         this.autor =autor;
         this.curso =curso;
+    }
+
+    public void actualizarTituloOMensaje(DatosActualizarTopico datos) {
+        if (datos.titulo()!= null) this.titulo = datos.titulo();
+        if (datos.texto() != null) this.mensaje = datos.texto();
+        if (datos.status() != null) this.status = datos.status();
     }
 }
