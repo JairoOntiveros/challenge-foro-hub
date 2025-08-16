@@ -25,10 +25,12 @@ public class Curso {
 
     private String nombre;
 
-    private String categoria;
-
     //relaciones
 
     @OneToMany (mappedBy = "curso", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Topico> topicos = new ArrayList<>();
+
+    public Curso(Long id) {
+
+    }
 }

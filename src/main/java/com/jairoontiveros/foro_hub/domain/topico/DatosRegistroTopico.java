@@ -1,7 +1,10 @@
 package com.jairoontiveros.foro_hub.domain.topico;
 
-public record DatosRegistroTopico(String titulo,
-                                  String texto,
-                                  String autor,
-                                  String curso) {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+public record DatosRegistroTopico(@NotBlank String titulo,
+                                  @NotBlank String texto,
+                                  @NotNull Long idAutor,
+                                  @NotNull Long idCurso) {
 }

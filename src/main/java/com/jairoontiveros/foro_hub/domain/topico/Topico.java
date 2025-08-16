@@ -4,6 +4,7 @@ import com.jairoontiveros.foro_hub.domain.curso.Curso;
 import com.jairoontiveros.foro_hub.domain.respuesta.Respuesta;
 import com.jairoontiveros.foro_hub.domain.usuario.Usuario;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -53,5 +54,12 @@ public class Topico {
     private List<Respuesta> respuestas = new ArrayList<>();
 
 
-
+    public Topico(@Valid DatosRegistroTopico datos, Usuario autor, Curso curso) {
+        this.id = null;
+        this.titulo = datos.titulo();
+        this.mensaje = datos.texto();
+        this.status = StatusTopico.ABIERTO;
+        this.autor =autor;
+        this.curso =curso;
+    }
 }
