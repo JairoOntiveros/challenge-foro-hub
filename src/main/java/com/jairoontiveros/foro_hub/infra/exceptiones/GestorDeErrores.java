@@ -8,6 +8,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,6 +45,18 @@ public class GestorDeErrores {
         return ResponseEntity.badRequest().body(error);
 
     }
+
+    //manejador de errores generico Http 500, por seguridad y hermetismo
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Map<String, Object>> manejarExcepcion(Exception ex) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("timestamp", LocalDateTime.now());
+        body.put("status", 500);
+        body.put("error", "Internal Server Error");
+        body.put("message", "Ocurrió un error al procesar la solicitud");
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
+    }
+
 
 
     public record DatosErrorValidacion(String campo, String mensaje) {
