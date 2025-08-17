@@ -1,7 +1,5 @@
 package com.jairoontiveros.foro_hub.infra.security;
 
-
-import com.jairoontiveros.foro_hub.controller.AutenticacionController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

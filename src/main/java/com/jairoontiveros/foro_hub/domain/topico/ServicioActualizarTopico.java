@@ -1,10 +1,6 @@
 package com.jairoontiveros.foro_hub.domain.topico;
 
-import com.jairoontiveros.foro_hub.domain.curso.CursoRepository;
-import com.jairoontiveros.foro_hub.domain.usuario.UsuarioRepository;
 import com.jairoontiveros.foro_hub.infra.exceptiones.ErrorDeValidacion;
-import com.jairoontiveros.foro_hub.infra.exceptiones.ResourceNotFoundException;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
