@@ -22,7 +22,7 @@
 - [Tecnologías usadas](#tecnologías-usadas)
 - [Endpoints principales](#endpoints-principales)
 - [Contribuir](#contribuir)
-- [Autores](#autores)
+- [Autor](#autor)
 - [Licencia](#licencia)
 
 ---
@@ -142,7 +142,7 @@ DELETE /topicos/{id} — Eliminar tópico (físicamente)
 GET /topicos/{id} — Detallar tópico
 
 ---  
-Autor
+## Autor
 Jairo Ontiveros -- [Github](https://github.com/JairoOntiveros)
 
 ---
